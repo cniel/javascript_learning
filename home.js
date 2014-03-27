@@ -347,19 +347,132 @@ alert(first.data + " - " + nextC.firstChild.data);
 // garder à l'esprit : firstElementChild, nextElementSibling (et les deux complémentaires)
 */
 
-//Ajout d'élément(s)
+// Ajout d'élément(s) //
+/*création d'un lien
+var newLink = document.createElement('a');
+//var newLinkText = document.createTextNode("Un site d'ostéo");
+
+//remplissage des attributs
+newLink.id = "ior-l";
+newLink.href = "http://www.ior-nantes.com";
+newLink.title = "International Osteopathic Research";
+newLink.appendChild(newLinkText);
+newLink.textContent = 'Un site d\'ostéo';
 
 
+//ajout effectif
+var myP = document.getElementById("myPar").appendChild(newLink);
+*/
+
+/*Clonage de noeuds : cloneNode
+var hr1 = document.createElement('hr');
+var hr2 = hr1.cloneNode(false); //clonage d'un élément créé - false car hr1 n'a pas d'enfant.
+
+var para = document.getElementById("myPar");
+var para2 = para.cloneNode(true); // clonage d'un élément existant
+para2.id = "myPar2";
+para.parentNode.appendChild(para2);
+*/
+
+/*Remplacement de noeuds : replaceChild
+var link = document.getElementsByTagName('a')[0];
+var newText = document.createTextNode("et un hyperlien !");
+link.replaceChild(newText, link.firstChild);
+*/
+
+/*Suppression de noeuds : removeChild (utiliser avec parentNode : plus facile)
+var link = document.getElementsByTagName('a')[0];
+link.parentNode.removeChild(link);
+//possible de récupérer le noeud détruit 
+*/
+
+/*hasChildNodes : Vérifier l'existence de noeuds enfants
+var bool = document.getElementById("myLink").hasChildNodes;
+if(bool){
+	alert('ya des enfants');
+}else{
+	alert("ya personnes");
+}
+*/
+
+/*insertBefore : insérer un élément avant un autre
+var par = document.getElementById("myPar");
+var newP = document.createElement('p');
+newP.textContent = "Paragraphe ajouté avant !";
+
+document.getElementById('myColoredDiv').insertBefore(newP, par);
+*/
+
+/*insertAfter : création de la fonction
+function insertAfter(newElement, afterElement){
+	var parent = afterElement.parentNode;
+	if(parent.lastChild === afterElement){
+		parent.appendChild(newElement);
+	}else{
+		parent.insertBefore(afterElement.nextSibling);
+	}
+}
+*/
 
 
+/*Exo1
+var div = document.createElement('div');
+div.id = "divTP1";
+div.textContent = "Le ";
 
+var strong = document.createElement('strong');
+strong.textContent = "World Wide Web Consortium"
 
+var strong2 = strong.cloneNode(false);
+strong2.textContent = 'W3C';
 
+var link = document.createElement('a');
+link.href = "http://fr.wikipedia.org/wiki/Organisme_de_normalisation";
+link.title = "Organisme de normalisation";
+link.textContent = "Organisme de standardisation";
 
+var link2 = document.createElement('a');
+link2.href="http://fr.wikipedia.org/wiki/Worlde_Wide_Web";
+link2.title = "Worlde Wide Web";
+link2.textContent = "World Wide Web";
 
+div.appendChild(strong);
+div.appendChild(document.createTextNode(", abrégé par le sigle "));
+div.appendChild(strong2);
+div.appendChild(document.createTextNode(", est un "));
+div.appendChild(link);
+div.appendChild(document.createTextNode(" à but non-lucratif chargé de promouvoir la compatibilité des technologies du "));
+div.appendChild(link2);
+div.appendChild(document.createTextNode("."));
 
+document.body.appendChild(div);
+*/
 
+/*Exo2
+var div = document.createElement('div');
+div.id = "divTP2";
 
+var textNodes = [
+	document.createTextNode("Langages basés sur ECMAScript :"),
+	document.createTextNode("Javascript"),
+	document.createTextNode("JScript"),
+	document.createTextNode("ActionScript"),
+	document.createTextNode("EX4")
+];
+
+var para = document.createElement('p');
+para.appendChild(textNodes[0]);
+
+var list = document.createElement('ul');
+for(var i=1, c=textNodes.length ; i<c ; i++){
+	var item = list.appendChild(document.createElement('li'));
+	item.appendChild(textNodes[i]);
+}
+
+div.appendChild(para);
+div.appendChild(list);
+document.body.appendChild(div);
+*/
 
 
 
