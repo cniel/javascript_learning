@@ -241,4 +241,126 @@ conversion(nb);
 
 //************************************************ PARTIE 2 MANIPULER LE CODE HTML *************************************************************************//
 
+/*l'objet window:
+//accès aux variables globales nommées pareil.
+var text = "global";
+(function(){
+	var text = "local";
+	alert(text);
+	alert(window.text);
+})();
+*/
+
+/*getElement(s)
+var div = document.getElementById('myDiv');
+//alert(div);
+var divs = document.getElementsByTagName('div');
+for(i=0, c=divs.length; i<c ; i++){
+	alert("Element n°" + (i+1) + " : " + divs[i]);
+}
+*/
+
+/*Query selector
+var query = document.querySelector("#menu .item span");
+var queryAll = document.querySelectorAll("#menu .item span");
+
+alert(query);
+alert(query.innerHTML);
+
+alert(queryAll.length);
+alert(queryAll[0].innerHTML + ' - ' + queryAll[1].innerHTML);
+*/
+
+/*getAttribute et setAttribute
+var link = document.getElementById("myLink");
+var href = link.getAttribute("href");
+alert(href);
+link.setAttribute('href',"http://www.google.com");
+link.href = 'http://www.ior-nantes.com';
+*/
+
+/*className
+alert("coucou");
+document.getElementById("myColoredDiv").className = 'blue';
+
+var classes = document.getElementById("myLink").className;
+var classesTab = [];
+
+classes = classes.split(" ");
+alert("classes : " + classes);
+
+for(i=0, c=classes.length; i<c; i++){
+	if(classes[i]){  // on vérifie qu'il n'y ait pas plusieurs espaces entre les noms de classe.
+		classesTab.push(classes[i]);
+	}
+}
+
+alert("classesTab : " + classesTab);
+*/
+
+/*innerHTML
+alert(document.getElementById("myColoredDiv").innerHTML);
+document.getElementById("myColoredDiv").innerHTML += ' et <strong>une portion de mise en emphase<strong>.';
+*/
+
+/*innerText - textContent
+var div = document.getElementById("myColoredDiv");
+var texte = div.textContent || div.innerText + " [via IE 8-]" || '';
+alert(texte);
+*/
+
+/*nodeType - nodeName
+var paragraph = document.getElementById("myPar");
+var div = paragraph.parentNode;
+alert(paragraph.nodeType + " ; " + paragraph.nodeName.toLowerCase());  //affiche '1 ; p'
+*/
+
+/*firstChild - lastChild
+var paragraph = document.getElementById("myPar");
+var first = paragraph.firstChild;
+var last = paragraph.lastChild;
+
+//nodeValue
+alert(first.nodeValue);
+alert(last.firstChild.data);
+*/
+
+/*childNodes
+var paragraph = document.getElementById("myPar");
+var children = paragraph.childNodes;
+for(var i=0, c=children.length ; i<c ; i++){
+	if(children[i].nodeType == 1){
+		alert(children[i].firstChild.data);
+	}else if(children[i].nodeType == 3){
+		alert(children[i].data);
+	}
+}
+*/
+
+/*nextSibling - previousSibling
+var para = document.getElementById("myPar");
+var first = para.firstChild;
+var nextC = first.nextSibling;
+
+alert(first.data + " - " + nextC.firstChild.data);
+// Parcours de l'ensemble des noeuds poosible, dans les deux sens.
+// garder à l'esprit : firstElementChild, nextElementSibling (et les deux complémentaires)
+*/
+
+//Ajout d'élément(s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
