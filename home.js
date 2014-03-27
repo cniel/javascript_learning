@@ -476,4 +476,30 @@ document.body.appendChild(div);
 
 
 
+// LES EVENEMENTS //
+/* Début
+<div id="events">
+	<span id="mySp" onclick="alert('Hello !\nVoici le contenu de ce sur quoi vous avez cliqué : ' + this.innerHTML);">Cliquez-moi !</span>
+	<br/>
+	<input id="input" type="text" size="50" value="Cliquez ici!" 
+		   onfocus="this.value='Appuyez maintenant sur votre touche tabulation';" 
+		   onblur="this.value='Cliquez ici!';"
+	/>
+	<br/><br/>
+	<a href="#"
+		onfocus="document.getElementById('input').value='Vous avez maintenant le focus sur le lien:';"
+		onclick="alert('Vous avez cliqué!');return false;"  
+	>Un lien bidon</a> <!--le "false" sert à bloquer l'action par défaut de l'élément sur lequel on clique. -->
+</div>
+*/
+
+
+
+
+
+
+
+
+
+
 
